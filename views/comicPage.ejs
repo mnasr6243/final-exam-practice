@@ -9,6 +9,7 @@
         </a>
     </h2>
 
+    <!-- Comic Display -->
     <% comics.forEach(comic=> { %>
         <div class="comicBlock">
             <img src="<%= comic.comicUrl %>" class="comicImg" alt="<%= comic.comicTitle %>">
@@ -16,6 +17,7 @@
                 <%= comic.comicTitle %>
             </div>
 
+            <!-- Links for adding comments and viewing comments -->
             <div class="linksRow">
                 [ <a href="/addComment/<%= comic.comicId %>">Add Comments</a> ]
                 |

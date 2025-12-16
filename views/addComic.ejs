@@ -3,19 +3,23 @@
     <h1 class="pageTitle">Add Comic</h1>
     <h2 class="mainTitle">New Comic</h2>
 
+    <!-- Form for adding a new comic -->
     <form action="/addComic" method="POST" class="formCenter">
         <label>Title:<br>
             <input type="text" name="title" required>
         </label><br><br>
 
+        <!-- URL Input -->
         <label>URL:<br>
             <input type="text" name="url" required>
         </label><br><br>
 
+        <!-- Publish Date Input -->
         <label>Publish Date:<br>
             <input type="date" name="publishDate" required>
         </label><br><br>
 
+        <!-- Comic Site Dropdown -->
         <label>Web Site:
             <select name="site_id">
                 <% sites.forEach(site=> { %>
@@ -26,6 +30,7 @@
             </select>
         </label><br><br>
 
+        <!-- Submit Button -->
         <button class="btn green" type="submit">Submit New Comic</button>
     </form>
 

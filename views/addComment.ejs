@@ -3,6 +3,7 @@
     <h1 class="pageTitle">Add Comment</h1>
     <h2 class="mainTitle">Adding Comments</h2>
 
+    <!-- Comic Display -->
     <div class="comicBlock">
         <img src="<%= comic.comicUrl %>" class="comicImg" alt="<%= comic.comicTitle %>">
         <div class="comicTitle">
@@ -10,19 +11,23 @@
         </div>
     </div>
 
+    <!-- Form for adding a comment -->
     <form action="/addComment/<%= comic.comicId %>" method="POST" class="formCenter">
         <label>Username:<br>
             <input type="text" name="username" required>
         </label><br><br>
 
+        <!-- Email Address Input -->
         <label>Email Address:<br>
             <input type="email" name="email" required>
         </label><br><br>
 
+        <!-- Comment Input -->
         <label>Comment:<br>
             <textarea name="comment" rows="4" required></textarea>
         </label><br><br>
 
+        <!-- Submit Button -->
         <button class="btn" type="submit">Submit Comment</button>
     </form>
 

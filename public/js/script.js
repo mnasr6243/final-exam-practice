@@ -1,11 +1,12 @@
-// RANDOM COMIC BUTTON
+// RANDOM COMIC FETCHING
 const btnRandom = document.getElementById("btnRandomComic");
 
+// Fetch and display a random comic when the button is clicked
 if (btnRandom) {
     btnRandom.addEventListener("click", async () => {
         const res = await fetch("/api/randomComic");
         const comic = await res.json();
-
+        
         const wrapper = document.querySelector(".randomWrapper");
         if (!wrapper || !comic) return;
 
@@ -16,11 +17,12 @@ if (btnRandom) {
     });
 }
 
-// COMMENTS MODAL
+// COMMENTS MODAL FUNCTIONALITY
 const modal = document.getElementById("commentsModal");
 const closeModal = document.getElementById("closeModal");
 const container = document.getElementById("commentsContainer");
 
+// Fetch and display comments in a modal when "View Comments" links are clicked
 if (modal) {
     document.querySelectorAll(".viewComments").forEach(link => {
         link.addEventListener("click", async e => {
@@ -40,6 +42,7 @@ if (modal) {
         });
     });
 
+    // Modal close functionality
     closeModal.addEventListener("click", () => modal.classList.add("hidden"));
     modal.addEventListener("click", e => {
         if (e.target === modal) modal.classList.add("hidden");
