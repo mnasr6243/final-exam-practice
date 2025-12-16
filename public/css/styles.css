@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.pageTitle {
+    color: #1489d1;
+    text-align: left;
+    margin: 20px;
+}
+
+.mainTitle {
+    font-size: 36px;
+    margin-top: 10px;
+}
+
+.center {
+    margin: 20px auto;
+}
+
+.btn {
+    background-color: #1489d1;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn.green {
+    background-color: #1ea94b;
+}
+
+.siteList {
+    margin: 20px;
+}
+
+.siteItem {
+    margin: 15px 0;
+}
+
+.siteName {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.randomWrapper,
+.comicBlock {
+    margin: 30px auto;
+}
+
+.comicImg {
+    max-width: 500px;
+    border-radius: 5px;
+}
+
+.comicTitle {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.linksRow {
+    margin-top: 8px;
+}
+
+.formCenter {
+    width: 400px;
+    margin: auto;
+    text-align: left;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modalContent {
+    background: white;
+    width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+#closeModal {
+    float: right;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* NAVIGATION BAR */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* top nav */
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1489d1;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.navBrand a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navLinks {
+    display: flex;
+    gap: 15px;
+}
+
+.navLink {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navLink:hover {
+    text-decoration: underline;
+}
+
+/* keep page content below nav */
+.mainContent {
+    padding: 20px;
+}

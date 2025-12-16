@@ -1,0 +1,36 @@
+<%- include("partials/header") %>
+
+    <h1 class="pageTitle">Comic Page</h1>
+
+    <h2 class="mainTitle">
+        <!-- Optional: link to external site -->
+        <a href="<%= site.comicSiteUrl %>" target="_blank">
+            <%= site.comicSiteName %>
+        </a>
+    </h2>
+
+    <% comics.forEach(comic=> { %>
+        <div class="comicBlock">
+            <img src="<%= comic.comicUrl %>" class="comicImg" alt="<%= comic.comicTitle %>">
+            <div class="comicTitle">
+                <%= comic.comicTitle %>
+            </div>
+
+            <div class="linksRow">
+                [ <a href="/addComment/<%= comic.comicId %>">Add Comments</a> ]
+                |
+                [ <a href="#" class="viewComments" data-id="<%= comic.comicId %>">View Comments</a> ]
+            </div>
+        </div>
+        <% }) %>
+
+            <!-- Comments Modal -->
+            <div id="commentsModal" class="modal hidden">
+                <div class="modalContent">
+                    <span id="closeModal">&times;</span>
+                    <h3>Comments</h3>
+                    <div id="commentsContainer"></div>
+                </div>
+            </div>
+
+            <%- include("partials/footer") %>

@@ -1,0 +1,29 @@
+<%- include("partials/header") %>
+
+    <h1 class="pageTitle">Add Comment</h1>
+    <h2 class="mainTitle">Adding Comments</h2>
+
+    <div class="comicBlock">
+        <img src="<%= comic.comicUrl %>" class="comicImg" alt="<%= comic.comicTitle %>">
+        <div class="comicTitle">
+            <%= comic.comicTitle %>
+        </div>
+    </div>
+
+    <form action="/addComment/<%= comic.comicId %>" method="POST" class="formCenter">
+        <label>Username:<br>
+            <input type="text" name="username" required>
+        </label><br><br>
+
+        <label>Email Address:<br>
+            <input type="email" name="email" required>
+        </label><br><br>
+
+        <label>Comment:<br>
+            <textarea name="comment" rows="4" required></textarea>
+        </label><br><br>
+
+        <button class="btn" type="submit">Submit Comment</button>
+    </form>
+
+    <%- include("partials/footer") %>

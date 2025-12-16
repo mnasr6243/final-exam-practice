@@ -1,20 +1,121 @@
-<%- include("partials/header.ejs") %>
-<%- include("partials/navbar.ejs") %>
+<%- include("partials/header") %>
 
-<body>
+    <h1 class="pageTitle">Home Page</h1>
+    <h2 class="mainTitle">My Favorite Comics</h2>
 
-    <nav>Home Page</nav>
+    <div class="center">
+        <a href="/addComic" class="btn">Add Comic</a>
+    </div>
 
-    <h1>My Favorite Comics</h1>
+    <!-- List of comic sites -->
+    <div class="siteList">
+        <% sites.forEach(site=> { %>
+            <div class="siteItem">
+                <!-- link to comicPage using comicSiteId -->
+                <a class="siteName" href="/comicPage/<%= site.comicSiteId %>">
+                    <%= site.comicSiteName %>
+                </a><br>
+                <!-- external site URL -->
+                <a class="siteUrl" href="<%= site.comicSiteUrl %>" target="_blank">
+                    <%= site.comicSiteUrl %>
+                </a>
+            </div>
+            <% }) %>
+    </div>
 
-    <img src="<%= randomComic[0].comicUrl%>" width="800"><br>
+    <!-- Random comic section -->
+    <% if (randomComic) { %>
+        <div class="randomWrapper">
+            <img src="<%= randomComic.comicUrl %>" class="comicImg" alt="<%= randomComic.comicTitle %>">
+            <div class="comicCaption">
+                <%= randomComic.comicSiteName %>
+            </div>
+        </div>
+        <% } %>
 
-    <button>Add Comic</button><br>
+            <div class="center">
+                <button id="btnRandomComic" class="btn green">Display Random Comic</button>
+            </div>
 
-    <button>Display Random Comic</button>
+            <%- include("partials/footer") %>
 
-    
-    
-</body>
 
-<%- include("partials/footer.ejs") %>
+                <!----------------------------------------------------------------- Rubric ----------------------------------------------------------------->
+
+                <table border="1" width="600" cellpadding="10px">
+                    <tbody>
+                        <tr>
+                            <th>#</th>
+                            <th>Task Description</th>
+                            <th>Points</th>
+                        </tr>
+                        <tr style="color:green">
+                            <td>1</td>
+                            <td>The <strong>Home</strong> page lists all comic names and clickable links to their
+                                corresponding websites from the "fe_comics_site" table. <br></td>
+                            <td width="20" align="center">30</td>
+                        </tr>
+                        <tr style="color:green">
+                            <td>2</td>
+                            <td>The <strong>Home</strong> page displays a random comic strip retrieved from the
+                                "fe_comics" table, with its corresponding comic name <br></td>
+                            <td width="20" align="center">25</td>
+                        </tr>
+                        <tr style="color:green">
+                            <td>3</td>
+                            <td>The <strong>Home</strong> page includes a "Display Random Comic" button to display a
+                                random comic and its name without reloading the page (using a Web API)<br></td>
+                            <td width="20" align="center">30</td>
+                        </tr>
+                        <tr style="color:green">
+                            <td>4</td>
+                            <td>The <strong>Add Comic</strong> page allows user to add a new comic to the database. The
+                                values for the 'Web Site' dropdown menu come from database.<br></td>
+                            <td width="20" align="center">30</td>
+                        </tr>
+                        <tr style="color:green">
+                            <td>5</td>
+                            <td>The <strong>Comic</strong> page lists all comic strips from the 'fe_comics' table for
+                                the Comic Name clicked on from the Home page. It should also include the comic title
+                                <br>
+                            </td>
+                            <td width="20" align="center">30</td>
+                        </tr>
+                        <tr style="color:green">
+                            <td>6</td>
+                            <td>The <strong>Comic</strong> page displays "View Comments" links below each comic strip.
+                                Use a Modal Window and a Web API to display all comments for each comic. <br>
+                            </td>
+                            <td width="20" align="center">30</td>
+                        </tr>
+                        <tr style="color:green">
+                            <td>7</td>
+                            <td>The <strong>Add Comment</strong> page displays the comic strip to add comments to, along
+                                with its title.<br></td>
+                            <td width="20" align="center">20</td>
+                        </tr>
+                        <tr style="color:green">
+                            <td>8</td>
+                            <td>The <strong>Add Comment</strong> page allows users to add a comment to the comic strip
+                                selected.<br></td>
+                            <td width="20" align="center">20</td>
+                        </tr>
+                        <tr style="color:green">
+                            <td>9</td>
+                            <td>Your submission has a nice style using Bootstrap or CSS in an external file with at
+                                least 10 properties.</td>
+                            <td width="20" align="center">10</td>
+                        </tr>
+                        <tr style="color:green">
+                            <td>10</td>
+                            <td>This rubric is properly included and updated.</td>
+                            <td width="20" align="center">2</td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>TOTAL </td>
+                            <td width="20" align="center">227</td>
+                        </tr>
+                    </tbody>
+                </table>
